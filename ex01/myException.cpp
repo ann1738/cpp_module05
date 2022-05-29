@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   myException.hpp                                    :+:      :+:    :+:   */
+/*   myException.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 13:08:04 by ann               #+#    #+#             */
-/*   Updated: 2022/05/29 19:01:00 by ann              ###   ########.fr       */
+/*   Created: 2022/05/29 13:12:15 by ann               #+#    #+#             */
+/*   Updated: 2022/05/29 13:49:17 by ann              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MYEXCEPTION_HPP
-# define MYEXCEPTION_HPP
+#include "myException.hpp"
 
-#include <string>
-#include <exception>
+myException::myException(std::string msg): message(msg) {}
 
-class myException: public std::exception
+const char* myException::what() const throw()
 {
-private:
-	std::string	message;
-public:
-	myException(std::string msg);
-	const char* what() const throw();
+	return (message.c_str());
+}
 
-	~myException() throw();
-};
-
-#endif
+myException::~myException() throw() {}

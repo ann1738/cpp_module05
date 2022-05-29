@@ -6,11 +6,13 @@
 /*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:26:35 by ann               #+#    #+#             */
-/*   Updated: 2022/05/29 19:00:52 by ann              ###   ########.fr       */
+/*   Updated: 2022/05/29 19:01:13 by ann              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 
 /****************** Constructors ********************/
 
@@ -92,6 +94,15 @@ std::string Bureaucrat::GradeTooLowException(void) const
 std::string Bureaucrat::GradeTooHighException(void) const
 {
 	return ("\e[31mA Bureaucrat's grade can't be this high.\e[0m\n");
+}
+
+void	Bureaucrat::signForm(Form const & form)
+{
+	if (form.getSigned())
+		std::cout << "Bureaucrat \"" << this->name << "\" \e[92msigned\e[0m Form \"" << form.getName() << "\"\n";
+	else
+		std::cout << "Bureaucrat \"" << this->name << "\" \e[91mcouldn't sign\e[0m Form \"" << form.getName() 
+		<< "\" because they are not qualified enough\n";		
 }
 
 /* insertion "<<" overloading */

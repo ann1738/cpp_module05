@@ -6,7 +6,7 @@
 /*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 13:03:56 by ann               #+#    #+#             */
-/*   Updated: 2022/05/29 15:24:07 by ann              ###   ########.fr       */
+/*   Updated: 2022/05/29 19:00:46 by ann              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(void)
 		}
 	}
 	{
-		std::cout << "\n\e[34m***** Test 4: valid and invalid increment of Bureucrate *****\e[0m\n";
+		std::cout << "\n\e[34m***** Test 4: valid and invalid increment of Bureaucrat *****\e[0m\n";
 		try
 		{
 			Bureaucrat	b("mia", 8);
@@ -72,7 +72,7 @@ int	main(void)
 		}
 	}
 	{
-		std::cout << "\n\e[34m***** Test 5: valid and invalid decrement of Bureucrate *****\e[0m\n";
+		std::cout << "\n\e[34m***** Test 5: valid and invalid decrement of Bureaucrat *****\e[0m\n";
 		try
 		{
 			Bureaucrat	b("natalie", 141);
@@ -92,7 +92,7 @@ int	main(void)
 		}
 	}
 	{
-		std::cout << "\n\e[34m***** Test 6: testing copy constructor and copy assignment overloading*****\e[0m\n";
+		std::cout << "\n\e[34m***** Test 6: testing copy constructor and copy assignment overloading *****\e[0m\n";
 		try
 		{
 			Bureaucrat	c("clara", 148);
