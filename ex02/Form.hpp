@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 15:36:21 by ann               #+#    #+#             */
-/*   Updated: 2022/05/30 12:04:42 by ann              ###   ########.fr       */
+/*   Updated: 2022/05/30 18:57:34 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	Form& operator=(const Form& original);
 
 /******************Destructor********************/
-	~Form();
+	virtual ~Form();
 
 /******************Member Functions********************/
 	std::string const	&getName() const;

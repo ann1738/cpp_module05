@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:51:17 by ann               #+#    #+#             */
-/*   Updated: 2022/05/30 13:32:42 by ann              ###   ########.fr       */
+/*   Updated: 2022/05/30 15:45:11 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,12 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		throw(myException("\e[31mForm can't be executed because it is not signed\e[0m\n"));
 	if (executor.getGrade() <= this->getExecGrade())
 	{
-	
+		std::cout << "\e[95mBzzzzzzzzzzzzzzzzzzzzzzz (drilling noises.. sorry)\e[0m\n";
+		if (rand() % 2)
+			std::cout << "\e[92m" << target << " was robotomized successfuly\e[0m\n";
+		else
+			std::cout << "\e[91m" << target << " failed to robotomize\e[0m\n";
 	}
 	else
 		throw(myException(Form::GradeTooLowException()));
 }
-

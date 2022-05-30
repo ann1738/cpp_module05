@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:26:35 by ann               #+#    #+#             */
-/*   Updated: 2022/05/30 12:42:09 by ann              ###   ########.fr       */
+/*   Updated: 2022/05/30 15:45:02 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,6 @@ void	Bureaucrat::executeForm(Form const & form)
 		std::cerr << "Bureaucrat \"" << this->getName() << "\" \e[91mcould not execute\e[0m Form \"" << form.getName() << "\"\n";
 		throw ;
 	}
-	
 }
 
 /* insertion "<<" overloading */
