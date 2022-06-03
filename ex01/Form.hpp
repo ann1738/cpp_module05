@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 15:36:21 by ann               #+#    #+#             */
-/*   Updated: 2022/05/29 17:20:39 by ann              ###   ########.fr       */
+/*   Updated: 2022/06/03 16:23:32 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ private:
 	bool				Signed;
 	int const			signGrade;
 	int const			execGrade;
+
+	std::string GradeTooLowException(void) const;
+	std::string GradeTooHighException(void) const;
 public:
 /******************Constructors********************/
 	Form();
@@ -39,8 +42,6 @@ public:
 	bool				getSigned() const;
 	int					getSignGrade() const;
 	int					getExecGrade() const;
-	std::string GradeTooLowException(void) const;
-	std::string GradeTooHighException(void) const;
 	void	beSigned(Bureaucrat const & bureau);
 };
 

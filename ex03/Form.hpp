@@ -6,7 +6,7 @@
 /*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 15:36:21 by ann               #+#    #+#             */
-/*   Updated: 2022/05/30 18:57:23 by anasr            ###   ########.fr       */
+/*   Updated: 2022/06/03 16:47:02 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ private:
 	bool				Signed;
 	int const			signGrade;
 	int const			execGrade;
+protected:
+	std::string GradeTooLowException(void) const;
+	std::string GradeTooHighException(void) const;
 public:
 /******************Constructors********************/
 	Form();
@@ -39,8 +42,6 @@ public:
 	bool				getSigned() const;
 	int					getSignGrade() const;
 	int					getExecGrade() const;
-	std::string GradeTooLowException(void) const;
-	std::string GradeTooHighException(void) const;
 	void	beSigned(Bureaucrat const & bureau);
 	virtual void	execute(Bureaucrat const & executor) const = 0;
 };

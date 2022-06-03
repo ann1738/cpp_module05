@@ -6,7 +6,7 @@
 /*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:48:18 by anasr             #+#    #+#             */
-/*   Updated: 2022/05/30 19:09:55 by anasr            ###   ########.fr       */
+/*   Updated: 2022/06/03 18:28:47 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,9 @@ Form *Intern::makeForm(std::string form_name, std::string const & _target)
 
 	/* saving form_name for later possible usage */
 	std::string		save(form_name);
-	
+
 	/* loading string possibilities */
-	std::string		shrub_possibilities(POSSIBLE1);
-	std::string		robo_possibilities(POSSIBLE2);
-	std::string		presedin_possibilities(POSSIBLE3);
+	std::string		possibilities[3] = {POSSIBLE1, POSSIBLE2, POSSIBLE3};
 	
 	/* loading function pointers */
 	Form *(*funcPtr[])(std::string const &) = {&makeShrubbery, &makeRobotomy, &makePresidential};
@@ -69,12 +67,14 @@ Form *Intern::makeForm(std::string form_name, std::string const & _target)
 	form_name += " ";
 
 	/* compare which form_name matches if any */
-	if (shrub_possibilities.find(form_name) != std::string::npos)
-		index = 0;
-	else if (robo_possibilities.find(form_name) != std::string::npos)
-		index = 1;
-	else if (presedin_possibilities.find(form_name) != std::string::npos)
-		index = 2;
+	for (int i = 0; i < 3; ++i)
+	{
+		if (possibilities[i].find(form_name) != std::string::npos)
+		{
+			index = i;
+			break;
+		}
+	}
 
 	/* if none of the forms match */
 	if (index >= 3)

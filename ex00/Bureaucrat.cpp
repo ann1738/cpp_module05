@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:26:35 by ann               #+#    #+#             */
-/*   Updated: 2022/05/29 19:00:52 by ann              ###   ########.fr       */
+/*   Updated: 2022/06/03 16:10:44 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /****************** Constructors ********************/
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): grade(150)
 {
 	std::cout << "Bureaucrat: Default constructor is called\n";
 }
@@ -98,7 +98,6 @@ std::string Bureaucrat::GradeTooHighException(void) const
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureau)
 {
-	static_cast<void>(bureau);
 	output << bureau.getName() << ", bureaucrat grade " << bureau.getGrade() << ".\n";
 	return (output);
 }

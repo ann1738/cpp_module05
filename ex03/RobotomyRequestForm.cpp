@@ -6,7 +6,7 @@
 /*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:51:17 by ann               #+#    #+#             */
-/*   Updated: 2022/05/30 15:45:11 by anasr            ###   ########.fr       */
+/*   Updated: 2022/06/03 16:55:13 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (!this->getSigned())
-		throw(myException("\e[31mForm can't be executed because it is not signed\e[0m\n"));
+		throw (myException("\e[31mForm can't be executed because it is not signed\e[0m\n"));
 	if (executor.getGrade() <= this->getExecGrade())
 	{
 		std::cout << "\e[95mBzzzzzzzzzzzzzzzzzzzzzzz (drilling noises.. sorry)\e[0m\n";
@@ -63,5 +63,5 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 			std::cout << "\e[91m" << target << " failed to robotomize\e[0m\n";
 	}
 	else
-		throw(myException(Form::GradeTooLowException()));
+		throw (myException(Form::GradeTooLowException()));
 }

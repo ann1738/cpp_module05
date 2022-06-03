@@ -6,7 +6,7 @@
 /*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:26:35 by ann               #+#    #+#             */
-/*   Updated: 2022/05/30 15:45:02 by anasr            ###   ########.fr       */
+/*   Updated: 2022/06/03 16:11:39 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /****************** Constructors ********************/
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): grade(150)
 {
 	std::cout << "Bureaucrat: Default constructor is called\n";
 }
@@ -123,7 +123,6 @@ void	Bureaucrat::executeForm(Form const & form)
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureau)
 {
-	static_cast<void>(bureau);
 	output << bureau.getName() << ", bureaucrat grade " << bureau.getGrade() << ".\n";
 	return (output);
 }

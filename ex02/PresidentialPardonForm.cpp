@@ -52,10 +52,9 @@ PresidentialPardonForm::~PresidentialPardonForm()
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (!this->getSigned())
-		throw(myException("\e[31mForm can't be executed because it is not signed\e[0m\n"));
+		throw (myException("\e[31mForm can't be executed because it is not signed\e[0m\n"));
 	if (executor.getGrade() <= this->getExecGrade())
 		std::cout << "\e[36m" << target << " has been pardoned by their highness 🛐 Zaphod Beeblebrox\e[0m\n";
 	else
-		throw(myException(Form::GradeTooLowException()));
+		throw (myException(Form::GradeTooLowException()));
 }
-

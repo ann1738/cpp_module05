@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 12:26:38 by ann               #+#    #+#             */
-/*   Updated: 2022/05/29 15:28:20 by ann              ###   ########.fr       */
+/*   Updated: 2022/06/03 16:19:18 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ class	Bureaucrat
 private:
 	std::string	const	name;
 	int					grade;
+
+	std::string	GradeTooLowException(void) const;
+	std::string	GradeTooHighException(void) const;
 public:
 /******************Constructors********************/
 	Bureaucrat();
@@ -37,8 +40,6 @@ public:
 	int					getGrade() const;
 	void	incrementGrade(void);
 	void	decrementGrade(void);
-	std::string	GradeTooLowException(void) const;
-	std::string	GradeTooHighException(void) const;
 };
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &bureau);

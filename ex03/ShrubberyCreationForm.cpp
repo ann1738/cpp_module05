@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:51:17 by ann               #+#    #+#             */
-/*   Updated: 2022/05/30 13:29:46 by ann              ###   ########.fr       */
+/*   Updated: 2022/06/03 16:56:41 by anasr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	if (!this->getSigned())
-		throw(myException("\e[31mForm can't be executed because it is not signed\e[0m\n"));
+		throw (myException("\e[31mForm can't be executed because it is not signed\e[0m\n"));
 	if (executor.getGrade() <= this->getExecGrade())
 	{
 		std::fstream file;
@@ -64,6 +64,5 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			throw (myException("\e[31mError opening shrubbery file\e[0m\n"));
 	}
 	else
-		throw(myException(Form::GradeTooLowException()));
+		throw (myException(Form::GradeTooLowException()));
 }
-
