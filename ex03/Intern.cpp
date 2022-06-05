@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:48:18 by anasr             #+#    #+#             */
-/*   Updated: 2022/06/03 18:28:47 by anasr            ###   ########.fr       */
+/*   Updated: 2022/06/05 22:22:35 by ann              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ Intern::~Intern()
 /***************** Member Functions *****************/
 
 /* helper function to call the constructor of the right form */
-static Form	*makeShrubbery(std::string const & _target){return new ShrubberyCreationForm(_target);}
-static Form	*makeRobotomy(std::string const & _target){return new RobotomyRequestForm(_target);}
-static Form	*makePresidential(std::string const & _target){return new PresidentialPardonForm(_target);}
+Form	*Intern::makeShrubbery(std::string const & _target) {return new ShrubberyCreationForm(_target);}
+Form	*Intern::makeRobotomy(std::string const & _target) {return new RobotomyRequestForm(_target);}
+Form	*Intern::makePresidential(std::string const & _target) {return new PresidentialPardonForm(_target);}
 
 Form *Intern::makeForm(std::string form_name, std::string const & _target)
 {
@@ -57,7 +57,7 @@ Form *Intern::makeForm(std::string form_name, std::string const & _target)
 	std::string		possibilities[3] = {POSSIBLE1, POSSIBLE2, POSSIBLE3};
 	
 	/* loading function pointers */
-	Form *(*funcPtr[])(std::string const &) = {&makeShrubbery, &makeRobotomy, &makePresidential};
+	Form *(Intern::*funcPtr[])(std::string const &) = {&Intern::makeShrubbery, &Intern::makeRobotomy, &Intern::makePresidential};
 	
 	/* manipulting form_name to check which form it matches (make it lowercase, erase spaces and tabs, add space at the end) */
 	for (int i = 0; form_name[i]; ++i)
@@ -81,7 +81,7 @@ Form *Intern::makeForm(std::string form_name, std::string const & _target)
 		throw (myException("\e[31mForm name not valid\e[0m\n"));
 	
 	/* creating the correct form through function pointers */
-	Form	*temp = funcPtr[index](_target);
+	Form	*temp = (this->*funcPtr[index])(_target);
 	std::cout << "\e[32mIntern creates " << save << "\e[0m\n";
 	return (temp);
 }

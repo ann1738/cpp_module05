@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anasr <anasr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ann <ann@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:48:25 by anasr             #+#    #+#             */
-/*   Updated: 2022/05/30 18:12:20 by anasr            ###   ########.fr       */
+/*   Updated: 2022/06/05 22:19:44 by ann              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ class	Intern
 {
 private:
 	std::string	target;
+
+	Form	*makeShrubbery(std::string const & _target);
+	Form	*makeRobotomy(std::string const & _target);
+	Form	*makePresidential(std::string const & _target);
 public:
 /******************Constructors********************/
 	Intern();
